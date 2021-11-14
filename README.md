@@ -26,7 +26,7 @@ code-insiders .
  ```
 
 
-## Open up a terminal and enter to following:
+## Build, Run & Clean / Open up a terminal and enter to following:
 
 
 
@@ -38,12 +38,66 @@ dotnet build -c Debug
 
  ```
 
-
-
 To run application:
 
 ```bash
 
 dotnet run -c Debug
+
+```
+
+To clean application:
+
+```bash
+
+dotnet clean
+
+```
+
+## Optional: Rebuilding Migrations
+
+To install or update EF Migration Tool:
+
+```bash
+
+dotnet tool install --global dotnet-ef
+
+```
+
+```bash
+
+dotnet tool update --global dotnet-ef
+
+```
+
+To remove migration:
+
+```bash
+
+dotnet ef migrations remove
+
+```
+
+To create migration (initialisation example):
+
+```bash
+
+dotnet ef migrations add Initialise_Database
+
+```
+
+To update to the newest migration:
+
+```bash
+
+dotnet ef database update
+
+```
+
+To step-through migrations, where 0 is the beginning:
+
+```bash
+
+dotnet ef database update 0
 
 ```
