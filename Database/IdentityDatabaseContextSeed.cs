@@ -13,7 +13,7 @@ public static class IdentityDatabaseContextSeed
                 "DROP SCHEMA public CASCADE",
                 "CREATE SCHEMA public",
                 "GRANT ALL ON SCHEMA public TO postgres",
-                "CREATE EXTENSION IF NOT EXISTS \"uuid-ossp\" WITH SCHEMA public;"
+                "CREATE EXTENSION IF NOT EXISTS \"uuid-ossp\" WITH SCHEMA public"
         };
         using var npgsql_connection = new NpgsqlConnection(connectionString);
         npgsql_connection.Open();
