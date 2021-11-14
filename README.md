@@ -2,7 +2,7 @@
 
 Issue resolved to this command: ModelBuilder.UsePropertyAccessMode(PropertyAccessMode.Property);
 
-Trace/Debug message being produced from the application included the following strings (for SEO purposes)
+Trace/Debug message being produced from the application included the following:
 
 - "0 entities were added and 1 entities were removed from navigation"
 - "on entity with key"
@@ -12,6 +12,8 @@ Trace/Debug message being produced from the application included the following s
 - "state due to severed required relationship to its parent entity of type"
 - "entity with key"
 - "changed state from 'Added' to 'Detached'"
+
+
 
 ## Outcome:
 
@@ -116,3 +118,26 @@ To step-through migrations, where 0 is the beginning:
 dotnet ef database update 0
 
 ```
+
+### Debug/Trace Messages being produced:
+
+dbug: 2021-11-13 02:24:44.143 CoreEventId.ValueGenerated[10808] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      'IdentityDatabaseContext' generated temporary value 'f45db049-cd50-4256-af82-138a3af707cc' for the property 'BusinessSubsidiaryId.BusinessSubsidiary'.
+dbug: 2021-11-13 02:24:44.143 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'IdentityDatabaseContext' started tracking 'BusinessSubsidiary' entity with key '{BusinessSubsidiaryId: f45db049-cd50-4256-af82-138a3af707cc}'.
+dbug: 2021-11-13 02:24:44.143 CoreEventId.SaveChangesStarting[10004] (Microsoft.EntityFrameworkCore.Update) 
+      SaveChanges starting for 'IdentityDatabaseContext'.
+dbug: 2021-11-13 02:24:44.143 CoreEventId.DetectChangesStarting[10800] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      DetectChanges starting for 'IdentityDatabaseContext'.
+dbug: 2021-11-13 02:24:44.143 CoreEventId.CollectionChangeDetected[10804] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      0 entities were added and 1 entities were removed from navigation 'Subsidiary.BuinessSubsidiaries' on entity with key '{SubsidiaryId: 64eeec28-eaeb-4960-88c1-1c70f70fef8f}'.
+dbug: 2021-11-13 02:24:44.143 CoreEventId.CascadeDeleteOrphan[10003] (Microsoft.EntityFrameworkCore.Update) 
+      An entity of type 'BusinessSubsidiary' with key '{BusinessSubsidiaryId: f45db049-cd50-4256-af82-138a3af707cc}' changed to 'Detached' state due to severed required relationship to its parent entity of type 'Subsidiary'.
+dbug: 2021-11-13 02:24:44.143 CoreEventId.StateChanged[10807] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      The 'BusinessSubsidiary' entity with key '{BusinessSubsidiaryId: f45db049-cd50-4256-af82-138a3af707cc}' tracked by 'IdentityDatabaseContext' changed state from 'Added' to 'Detached'.
+dbug: 2021-11-13 02:24:44.143 CoreEventId.CollectionChangeDetected[10804] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      0 entities were added and 1 entities were removed from navigation 'Business.BusinessSubsidiaries' on entity with key '{BusinessId: d3391de2-5f84-4993-827a-e121d099fee6}'.
+dbug: 2021-11-13 02:24:44.143 CoreEventId.DetectChangesCompleted[10801] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      DetectChanges completed for 'IdentityDatabaseContext'.
+dbug: 2021-11-13 02:24:44.143 CoreEventId.SaveChangesCompleted[10005] (Microsoft.EntityFrameworkCore.Update) 
+      SaveChanges completed for 'IdentityDatabaseContext' with 0 entities written to the database.
